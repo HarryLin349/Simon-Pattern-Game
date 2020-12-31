@@ -17,6 +17,7 @@ $(".btn").on("click", function() {
     var userChosenColor = this.id;
     userClickedPattern.push(userChosenColor);
     playSound(this.id);
+    animatePress(this.id);
     checkAnswer(this.id);
   }
 })
@@ -30,7 +31,7 @@ function animatePress(currentColour) {
   $("." + currentColour).addClass("pressed");
   setTimeout(function() {
     $("." + currentColour).removeClass("pressed");
-  }, 100)
+  }, 200)
 }
 
 function nextSequence() {
